@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	timeout = time.Duration(5 * time.Second)
+	timeout = time.Duration(60 * time.Second)
 )
 
 //Result contain info about proxy
@@ -43,7 +43,7 @@ func CheckProxySOCKS(logger zerolog.Logger, addr string, c chan Result, wg *sync
 		},
 	}
 	logger.Debug().Msg("starting request")
-	response, err := httpClient.Get("http://localhost:3000")
+	response, err := httpClient.Get("https://en075sydjf92n6.x.pipedream.net")
 	log.Println("finished request")
 	if err != nil {
 		logger.Err(err).Send()
